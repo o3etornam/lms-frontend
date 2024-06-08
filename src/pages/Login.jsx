@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useState } from 'react'
-import classes from './Login.module.css'
 
 
 
@@ -18,15 +17,14 @@ function Login() {
             console.log(res.data)
 
         }catch(err){
-            console.error(err)
-            alert('Invalid Email or password')
-        }
+            console.error(err.message)
+        }  
     }
 
   return (
     <>
-    <div className={`${classes.container}`}>
-        <section className={`${classes.section1}`}>
+    <div>
+        <section>
             <h1>
                 StudyBuddy
             </h1>
@@ -35,24 +33,24 @@ function Login() {
             </div>
 
         </section>
-        <section className={`${classes.section2}`}>
+        <section>
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="username">Email</label><br />
-                <input className={`${classes.formInput}`} type="text" onChange={e => setEmail(e.target.value)} placeholder='Enter Email'/>
+                <input type="text" onChange={e => setEmail(e.target.value)} placeholder='Enter Email'/>
             </div>
             <div>
                 <label htmlFor="password">Password</label><br />
-                <input className={`${classes.formInput}`} type="password" onChange={e => setPassword(e.target.value)} placeholder='Enter Password'/>
+                <input type="password" onChange={e => setPassword(e.target.value)} placeholder='Enter Password'/>
             </div>
-            <section className={`${classes.section3}`}>
+            <section>
                 <div>
                     <input type="checkbox" name="stay" id="" />
                     <label htmlFor="stay">Stay signed in</label>
                     <a href="#">Forgot Password</a>
                 </div>
                 <div>
-                    <button className={`${classes.loginBtn}`} type='submit'>Log In</button>
+                    <button type='submit'>Log In</button>
                 </div>
             </section>
         </form>
