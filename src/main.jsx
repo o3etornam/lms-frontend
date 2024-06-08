@@ -9,10 +9,11 @@ import './index.css'
 const router = createBrowserRouter([
   {path: '/',
     element: <HomePage/>,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {path: '/login',
     element: <Login />,
+
   }
 ])
 

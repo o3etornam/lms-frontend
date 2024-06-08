@@ -19,23 +19,44 @@ function Login() {
 
         }catch(err){
             console.error(err)
+            alert('Invalid Email or password')
         }
     }
 
   return (
     <>
     <div className={`${classes.container}`}>
+        <section className={`${classes.section1}`}>
+            <h1>
+                StudyBuddy
+            </h1>
+            <div>
+                <p>Need a StudyBuddy Account</p>
+            </div>
+
+        </section>
+        <section className={`${classes.section2}`}>
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="username">Email</label>
-                <input type="text" onChange={e => setEmail(e.target.value)} placeholder='Enter Email'/>
+                <label htmlFor="username">Email</label><br />
+                <input className={`${classes.formInput}`} type="text" onChange={e => setEmail(e.target.value)} placeholder='Enter Email'/>
             </div>
             <div>
-                <label htmlFor="password">Password</label>
-                <input type="password" onChange={e => setPassword(e.target.value)} placeholder='Enter Password'/>
+                <label htmlFor="password">Password</label><br />
+                <input className={`${classes.formInput}`} type="password" onChange={e => setPassword(e.target.value)} placeholder='Enter Password'/>
             </div>
-            <button type='submit'>Login</button>
+            <section className={`${classes.section3}`}>
+                <div>
+                    <input type="checkbox" name="stay" id="" />
+                    <label htmlFor="stay">Stay signed in</label>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <div>
+                    <button className={`${classes.loginBtn}`} type='submit'>Log In</button>
+                </div>
+            </section>
         </form>
+        </section>
     </div>
     </>
   )
