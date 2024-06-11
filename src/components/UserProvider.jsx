@@ -1,10 +1,15 @@
 // UserContext.js
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    firstName: "Alfred",
+    lastName: "Klu",
+    email: "03etornam@gmail.com",
+    role: "admin",
+  });
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
@@ -14,5 +19,11 @@ export function UserProvider({ children }) {
 }
 
 export function useUser() {
-  return useContext(UserContext);
+  const context = useContext(UserContext);
+
+  if (!context) {
+    throw new Error("useUser must be used within a UserProvider");
+  }
+
+  return context;
 }
