@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import HomePage from "./pages/Home.jsx";
-import Courses from "./pages/Courses.jsx";
+import Schedule from "./pages/Schedule.jsx";
 import "./index.css";
 import Settings from "./pages/Settings.jsx";
 import { UserProvider } from "./components/UserProvider.jsx";
@@ -12,7 +12,7 @@ import { UserProvider } from "./components/UserProvider.jsx";
 const router = createBrowserRouter([
   { path: "/", element: <HomePage />, errorElement: <ErrorPage /> },
   { path: "/login", element: <Login />, errorElement: <ErrorPage /> },
-  { path: "/courses", element: <Courses /> },
+  { path: "/schedule", element: <Schedule /> },
   { path: "/settings", element: <Settings /> },
 ]);
 
